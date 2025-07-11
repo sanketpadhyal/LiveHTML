@@ -1,0 +1,314 @@
+/* === GLOBAL === */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #000;
+  color: #fff;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* === LANDING PAGE === */
+#landingPage {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.glass-card {
+  padding: 40px;
+  border-radius: 30px;
+  backdrop-filter: blur(25px);
+  background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: inset 0 0 30px rgba(255,255,255,0.02), 0 0 40px rgba(0,255,255,0.08);
+  text-align: center;
+  animation: fadeIn 1.2s ease;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+}
+
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeUp 1s ease forwards;
+}
+
+.brand {
+  color: #00ffe1;
+  text-shadow: 0 0 15px #00ffe1;
+}
+
+.subtext {
+  font-size: 1.2rem;
+  color: #bbbbbb;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 1s ease 0.5s forwards;
+}
+
+#getStartedBtn {
+  margin-top: 30px;
+  padding: 14px 36px;
+  font-size: 18px;
+  background: rgba(0, 255, 255, 0.1);
+  border: 2px solid #00ffe1;
+  color: #fff;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.4s ease;
+  box-shadow: 0 0 20px #00ffe1;
+}
+
+#getStartedBtn:hover {
+  background: #00ffe1;
+  color: #000;
+  transform: scale(1.05);
+}
+
+#getStartedBtn.glow {
+  box-shadow: 0 0 35px 10px yellow;
+  border-color: yellow;
+  background-color: rgba(255, 255, 0, 0.2);
+  color: yellow;
+}
+
+/* === CONFIG PAGE === */
+#configPage {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  z-index: 9;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease;
+}
+
+.config-card {
+  background: rgba(255,255,255,0.03);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  backdrop-filter: blur(20px);
+  max-width: 500px;
+}
+
+.config-card h2 {
+  color: #00ffe1;
+  margin-bottom: 20px;
+}
+
+.config-card p {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.config-btn {
+  padding: 10px 24px;
+  background: #111;
+  color: #ccc;
+  border: 2px solid #00ffe1;
+  border-radius: 10px;
+  margin: 10px 5px;
+  transition: 0.3s ease;
+}
+
+.config-btn:hover,
+.config-btn.active {
+  background: #00ffe1;
+  color: #000;
+  box-shadow: 0 0 12px #00ffe1;
+}
+
+#letsGoBtn {
+  margin-top: 30px;
+  padding: 14px 36px;
+  font-size: 18px;
+  border: 2px solid #00ffe1;
+  background: rgba(0, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 14px;
+  box-shadow: 0 0 20px #00ffe1;
+  transition: 0.4s ease;
+}
+#letsGoBtn:hover {
+  background: #00ffe1;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* === COMPILER PAGE === */
+#compilerPage {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  background: #000;
+  transition: opacity 1s ease;
+}
+.layout-pc {
+  display: flex;
+}
+.layout-phone {
+  display: flex;
+  flex-direction: column;
+}
+.pane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.editor-pane {
+  background: #0a0a0a;
+  border-right: 1px solid #111;
+  backdrop-filter: blur(20px);
+}
+.output-pane {
+  background: #0f0f0f;
+  border-left: 1px solid #111;
+  backdrop-filter: blur(20px);
+}
+textarea {
+  flex: 1;
+  background: #111;
+  color: #00ffcc;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: monospace;
+  padding: 16px;
+  resize: none;
+  box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.1);
+  margin-bottom: 15px;
+}
+iframe {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.05);
+}
+.run-btn {
+  align-self: flex-end;
+  padding: 10px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #00e676;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 230, 118, 0.5);
+}
+.run-btn:hover {
+  background: #00ff99;
+  transform: scale(1.08);
+  box-shadow:
+    0 0 12px #00ff99,
+    0 0 25px #00ff99,
+    0 0 40px rgba(0, 255, 153, 0.5),
+    inset 0 0 10px rgba(255, 255, 255, 0.1);
+  color: black;
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes fadeInSlow {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Credits under subtext */
+.credits {
+  color: #888;
+  margin-top: 10px;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+/* Language Display */
+#langDisplay {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  color: #00ffe1;
+  font-weight: bold;
+  text-shadow: 0 0 5px #00ffe1;
+}
+
+/* Let’s Go Button Hover Glow */
+#letsGoBtn:hover {
+  background: #00ffe1;
+  color: #000;
+  transform: scale(1.08);
+  box-shadow: 0 0 20px #00ffe1, 0 0 40px rgba(0,255,255,0.4);
+}
+
+@media screen and (max-width: 768px) {
+  textarea {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  #langDisplay {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+
+  .run-btn {
+    padding: 8px 18px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  textarea {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  #langDisplay {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+
+  .run-btn {
+    padding: 8px 18px;
+    font-size: 14px;
+  }
+
+  .pane {
+    padding: 12px;
+  }
+
+  .config-card {
+    padding: 20px;
+    width: 90%;
+  }
+}

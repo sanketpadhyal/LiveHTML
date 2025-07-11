@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LiveHtml</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+
+  <!-- Landing Page -->
+  <div id="landingPage">
+    <div class="glass-card">
+      <h1 class="fade-in">Welcome to <span class="brand">LiveHtml</span> 👋</h1>
+      <p class="subtext fade-in-delay">
+        ✨ A futuristic HTML playground.<br />
+        ⚡ Minimal. Instant. Beautiful.<br />
+        🚀 Write, run, and render in real time.
+      </p>
+      <p class="credits">👨‍💻 MADE BY VortexByte ~ @sanketpadhyal 💡🔥</p>
+      <button id="getStartedBtn">GET STARTED</button>
+    </div>
+  </div>
+
+  <!-- Config Page -->
+  <div id="configPage">
+    <div class="config-card">
+      <h2>🧪 Choose your setup</h2>
+      <div>
+        <p>🎨 Language:</p>
+        <button class="config-btn lang-btn active" data-lang="HTML">HTML</button>
+        <button class="config-btn lang-btn" data-lang="CSS">CSS</button>
+        <button class="config-btn lang-btn" data-lang="JS">JS</button>
+      </div>
+      <div>
+        <p>💻 Device:</p>
+        <button class="config-btn os-btn active" data-os="pc">PC</button>
+        <button class="config-btn os-btn" data-os="phone">Phone</button>
+      </div>
+      <button id="letsGoBtn">🚀 LETS GOO!!</button>
+    </div>
+  </div>
+
+  <!-- Compiler Page -->
+  <div id="compilerPage" class="layout-pc">
+    <div class="pane editor-pane">
+      <div id="langDisplay">📝 You are now coding in: <span id="selectedLang">HTML</span></div>
+      <textarea id="htmlCode" placeholder="START TYPING YOUR MASTERPIECE HERE ..."></textarea>
+      <button onclick="runHTML()" class="run-btn">RUN</button>
+    </div>
+
+    <div class="pane output-pane">
+      <iframe id="outputFrame" sandbox="allow-scripts allow-same-origin"></iframe>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
