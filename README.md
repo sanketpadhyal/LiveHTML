@@ -13,4 +13,3 @@ STILL CURRENTLY V1 😴
 
 ## Author
 MADE BY VortexByte ~ @sanketpadhyal
-LIVE BY NETFLIFY SOFTWARE
