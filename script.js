@@ -57,7 +57,7 @@ function runHTML() {
   doc.close();
 }
 
-// Landing → Config
+// Landing Config
 document.getElementById("getStartedBtn").addEventListener("click", function () {
   const btn = this;
   const landing = document.getElementById("landingPage");
@@ -77,7 +77,7 @@ document.getElementById("getStartedBtn").addEventListener("click", function () {
   }, 800);
 });
 
-// Config → Compiler
+// Config Compiler
 document.getElementById("letsGoBtn").addEventListener("click", () => {
   const config = document.getElementById("configPage");
   const compiler = document.getElementById("compilerPage");
@@ -105,7 +105,7 @@ document.querySelectorAll(".lang-btn").forEach(btn => {
     btn.classList.add("active");
     chosenLang = btn.dataset.lang;
 
-    // Live update preview label (if already in compiler)
+    // Live update preview label
     const label = document.getElementById("selectedLang");
     if (label) {
       label.textContent = `${chosenLang} IF OUTPUT GIVES ERROR TRY RESTARTING WEB AS IT IS V1`;
