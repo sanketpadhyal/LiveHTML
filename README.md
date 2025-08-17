@@ -12,4 +12,4 @@ STILL CURRENTLY V1 😴
 - 🔥 Made with pure HTML, CSS, JS (no frameworks)
 
 ## Author
-MADE BY VortexByte ~ @sanketpadhyal
+MADE BY Sanket Padhyal
